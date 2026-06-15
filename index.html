@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Stainless Steel | Manufacturing Website Mockup</title>
+  <meta name="description" content="Premium stainless steel fabrication website mockup with product catalogue and quote request system." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #172033; background: #f5f7fa; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1180px, 92%); margin: auto; }
+    header { background: #070b11; color: #fff; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { font-weight: 800; letter-spacing: 1px; font-size: 20px; }
+    .logo span { color: #2f80ed; }
+    .nav-links { display: flex; gap: 28px; font-size: 13px; text-transform: uppercase; font-weight: 700; }
+    .btn { display: inline-block; background: #0b63ce; color: #fff; padding: 13px 20px; border-radius: 4px; font-weight: 700; font-size: 13px; border: 1px solid #0b63ce; }
+    .btn.outline { background: transparent; border-color: #fff; }
+    .hero { background: linear-gradient(90deg, rgba(7,11,17,.95), rgba(7,11,17,.72)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=80') center/cover; color: #fff; padding: 110px 0 80px; }
+    .hero-content { max-width: 650px; }
+    .kicker { color: #6cb2ff; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 13px; margin-bottom: 15px; }
+    h1 { font-size: clamp(42px, 6vw, 72px); line-height: 1.05; margin-bottom: 24px; }
+    .hero p { font-size: 19px; color: #dce6f3; margin-bottom: 30px; max-width: 560px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .trust-bar { background: #0d1420; color: #fff; padding: 24px 0; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .trust-item { border-left: 3px solid #2f80ed; padding-left: 14px; font-size: 13px; color: #c9d3df; }
+    section { padding: 78px 0; }
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto 42px; }
+    .section-head h2 { font-size: clamp(30px, 4vw, 44px); color: #0d1420; margin-bottom: 12px; }
+    .section-head p { color: #5f6b7a; }
+    .products { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+    .card { background: #fff; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 28px rgba(16,31,54,.06); }
+    .card-img { height: 170px; background: linear-gradient(135deg, #d7dde5, #fff); display: grid; place-items: center; color: #6b7280; font-weight: 700; text-align: center; padding: 20px; }
+    .card-body { padding: 18px; }
+    .card h3 { font-size: 17px; margin-bottom: 8px; color: #111827; }
+    .card p { font-size: 14px; color: #667085; margin-bottom: 14px; }
+    .link { color: #0b63ce; font-weight: 800; font-size: 13px; }
+    .dark-split { background: #070b11; color: #fff; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .split h2 { font-size: 42px; line-height: 1.1; margin-bottom: 18px; }
+    .service-list { list-style: none; display: grid; gap: 12px; margin-top: 24px; }
+    .service-list li::before { content: '✓'; color: #2f80ed; font-weight: 900; margin-right: 10px; }
+    .factory-box { min-height: 360px; border-radius: 14px; background: linear-gradient(135deg, #141b26, #3c4655); display: grid; place-items: center; font-size: 26px; font-weight: 800; color: #cfd8e3; }
+    .quote-section { background: #eef3f9; }
+    .quote-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px; align-items: start; }
+    .quote-summary, form { background: #fff; border: 1px solid #dde3ec; border-radius: 12px; padding: 24px; box-shadow: 0 10px 28px rgba(16,31,54,.06); }
+    .quote-summary h3, form h3 { margin-bottom: 16px; color: #111827; }
+    .quote-item { display: flex; justify-content: space-between; border-bottom: 1px solid #e5eaf1; padding: 12px 0; font-size: 14px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { display: block; font-size: 13px; font-weight: 800; color: #344054; margin-bottom: 6px; }
+    input, select, textarea { width: 100%; padding: 12px; border: 1px solid #cfd7e3; border-radius: 6px; font: inherit; }
+    textarea { min-height: 110px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; text-align: center; }
+    .stat { background: #fff; border-radius: 10px; padding: 25px; border: 1px solid #dde3ec; }
+    .stat strong { font-size: 34px; color: #0b63ce; display: block; }
+    footer { background: #05070b; color: #c9d3df; padding: 48px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 28px; margin-bottom: 28px; }
+    footer h4 { color: #fff; margin-bottom: 12px; }
+    footer p, footer a { font-size: 14px; color: #aab5c4; display: block; margin-bottom: 8px; }
+    .copyright { border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; font-size: 13px; color: #7d8795; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .trust-grid, .products, .stats, .footer-grid { grid-template-columns: 1fr 1fr; }
+      .split, .quote-layout { grid-template-columns: 1fr; }
+      .hero { padding: 80px 0 60px; }
+    }
+    @media (max-width: 560px) {
+      .trust-grid, .products, .stats, .footer-grid, .form-grid { grid-template-columns: 1fr; }
+      .btn { width: 100%; text-align: center; }
+      section { padding: 55px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">ELITE <span>STAINLESS</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#quote">Quote</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="#quote">Request a Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="kicker">Australian Stainless Steel Fabrication</div>
+        <h1>Premium stainless steel products built to last.</h1>
+        <p>Commercial urinals, wash troughs, linear drains, grates, benchtops and custom fabrication for industrial and commercial projects.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#products">View Products</a>
+          <a class="btn outline" href="#quote">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="container trust-grid">
+        <div class="trust-item">Australian owned and operated</div>
+        <div class="trust-item">304 / 316 stainless steel options</div>
+        <div class="trust-item">Custom made to your specifications</div>
+        <div class="trust-item">Commercial grade fabrication</div>
+      </div>
+    </div>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2>Product Catalogue</h2>
+          <p>Clean WooCommerce-style catalogue layout for B2B quote requests without online payment checkout.</p>
+        </div>
+        <div class="products">
+          <article class="card"><div class="card-img">Commercial Urinals</div><div class="card-body"><h3>Commercial Urinals</h3><p>Durable commercial urinal systems with custom sizing.</p><a class="link" href="#quote">Add to Quote →</a></div></article>
+          <article class="card"><div class="card-img">Wash Troughs</div><div class="card-body"><h3>Wash Troughs</h3><p>Wall mounted and freestanding wash trough solutions.</p><a class="link" href="#quote">Add to Quote →</a></div></article>
+          <article class="card"><div class="card-img">Linear Drains</div><div class="card-body"><h3>Linear Drains</h3><p>Industrial drainage products for commercial facilities.</p><a class="link" href="#quote">Add to Quote →</a></div></article>
+          <article class="card"><div class="card-img">Steel Grates</div><div class="card-body"><h3>Stainless Steel Grates</h3><p>Heavy-duty grates made for performance and longevity.</p><a class="link" href="#quote">Add to Quote →</a></div></article>
+          <article class="card"><div class="card-img">Benchtops</div><div class="card-body"><h3>Benchtops</h3><p>Premium stainless benchtops for commercial spaces.</p><a class="link" href="#quote">Add to Quote →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="dark-split">
+      <div class="container split">
+        <div>
+          <div class="kicker">Services</div>
+          <h2>Custom stainless steel fabrication from design to delivery.</h2>
+          <p>Built for manufacturing, construction, hospitality, commercial plumbing and industrial projects requiring accurate fabrication.</p>
+          <ul class="service-list">
+            <li>Laser cutting</li>
+            <li>Folding</li>
+            <li>Welding</li>
+            <li>Custom stainless steel fabrication</li>
+            <li>Downloadable PDF specification sheets</li>
+          </ul>
+        </div>
+        <div class="factory-box">Industrial Fabrication Image Area</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container stats">
+        <div class="stat"><strong>10+</strong>Years Experience</div>
+        <div class="stat"><strong>1000+</strong>Projects Completed</div>
+        <div class="stat"><strong>304/316</strong>Material Grades</div>
+        <div class="stat"><strong>100%</strong>Custom Quote Based</div>
+      </div>
+    </section>
+
+    <section id="quote" class="quote-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Quote Request System</h2>
+          <p>Customers can add multiple products, include custom specifications, then submit one combined quote request.</p>
+        </div>
+        <div class="quote-layout">
+          <div class="quote-summary">
+            <h3>Your Quote List</h3>
+            <div class="quote-item"><span>Wash Trough</span><strong>Qty 1</strong></div>
+            <div class="quote-item"><span>Linear Drain</span><strong>Qty 2</strong></div>
+            <div class="quote-item"><span>Stainless Steel Grate</span><strong>Qty 1</strong></div>
+            <p style="margin-top:16px;color:#667085;font-size:14px;">Example quote cart preview for the client reference mockup.</p>
+          </div>
+          <form>
+            <h3>Submit Quote Request</h3>
+            <div class="form-grid">
+              <div><label>Full Name</label><input type="text" placeholder="Enter your name"></div>
+              <div><label>Company</label><input type="text" placeholder="Company name"></div>
+              <div><label>Email</label><input type="email" placeholder="Email address"></div>
+              <div><label>Phone</label><input type="tel" placeholder="Phone number"></div>
+              <div><label>Length</label><input type="text" placeholder="e.g. 1200mm"></div>
+              <div><label>Width</label><input type="text" placeholder="e.g. 450mm"></div>
+              <div><label>Depth</label><input type="text" placeholder="e.g. 300mm"></div>
+              <div><label>Material Grade</label><select><option>304 Stainless Steel</option><option>316 Stainless Steel</option></select></div>
+              <div class="full"><label>Surface Finish</label><select><option>Brushed Satin</option><option>Mirror Polish</option><option>Custom Finish</option></select></div>
+              <div class="full"><label>Custom Notes</label><textarea placeholder="Enter project requirements, drawings, or special instructions"></textarea></div>
+              <div class="full"><button class="btn" type="button">Submit Quote Request</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>Elite Stainless Steel</h4><p>Premium stainless steel fabrication website mockup for GitHub portfolio reference.</p></div>
+        <div><h4>Products</h4><a>Commercial Urinals</a><a>Wash Troughs</a><a>Linear Drains</a><a>Grates</a></div>
+        <div><h4>Services</h4><a>Laser Cutting</a><a>Folding</a><a>Welding</a><a>Custom Fabrication</a></div>
+        <div><h4>Contact</h4><p>Australia</p><p>quotes@example.com</p><p>Request a Quote</p></div>
+      </div>
+      <div class="copyright">© 2026 Elite Stainless Steel Mockup. Created as a portfolio concept.</div>
+    </div>
+  </footer>
+</body>
+</html>
